@@ -41,11 +41,12 @@ class MainActivity : AppCompatActivity() {
         val call = service.getJoke()
 
         // Option
+        /*
         val jokeResponseModel = call.execute().body()
         textView?.post {
             textView?.text = jokeResponseModel?.value?.joke!!
         }
-
+        */
         // Option using call enqueue
         call.enqueue(object : Callback<JokeResponseModel> {
             override fun onResponse(call: Call<JokeResponseModel>, response: Response<JokeResponseModel>) {
